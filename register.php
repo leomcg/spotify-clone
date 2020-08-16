@@ -1,10 +1,18 @@
 <?php
+include('includes/config.php');
 include('includes/classes/Account.php');
+include('includes/classes/Constants.php');
 
 $account = new Account();
 
 include('includes/handlers/register-handler.php');
 include('includes/handlers/login-handler.php');
+
+function getInputValue($input) {
+  if(isset($_POST[$input])) {
+    echo $_POST[$input];
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +35,7 @@ include('includes/handlers/login-handler.php');
           id="loginUsername" 
           name="loginUsername" 
           placeholder="e.g. bartSimpson" 
-          value="<?php $_POST['loginUsername'] ?>"
+          value="<?php getInputValue('loginUsername') ?>"
           required>
       </p>
       <p>
@@ -37,7 +45,7 @@ include('includes/handlers/login-handler.php');
           id="loginPassword" 
           name="loginPassword" 
           placeholder="Your password"
-          value="<?php $_POST['loginPassword'] ?>"
+          value="<?php getInputValue('loginPassword') ?>"
           required>
       </p>
 
@@ -54,7 +62,7 @@ include('includes/handlers/login-handler.php');
           id="username" 
           name="username" 
           placeholder="e.g. bartSimpson"
-          value="<?php $_POST['username'] ?>"
+          value="<?php getInputValue('username') ?>"
           required>
       </p>
       <p>
@@ -65,7 +73,7 @@ include('includes/handlers/login-handler.php');
           id="firstName" 
           name="firstName" 
           placeholder="e.g. Bart" 
-          value="<?php $_POST['firstName'] ?>"
+          value="<?php getInputValue('firstName') ?>"
           required>
       </p>
       <p>
@@ -76,7 +84,7 @@ include('includes/handlers/login-handler.php');
           id="lastName" 
           name="lastName" 
           placeholder="e.g. Simpson" 
-          value="<?php $_POST['lastName'] ?>"
+          value="<?php getInputValue('lastName') ?>"
           required>
       </p>
       <p>
@@ -88,7 +96,7 @@ include('includes/handlers/login-handler.php');
           id="email" 
           name="email" 
           placeholder="e.g. bart@gmail.com"
-          value="<?php $_POST['email'] ?>" 
+          value="<?php getInputValue('email') ?>" 
           required>
       </p>
       <p>
@@ -98,7 +106,7 @@ include('includes/handlers/login-handler.php');
           id="email2" 
           name="email2" 
           placeholder="Confirm your e-mail"
-          value="<?php $_POST['email2'] ?>" 
+          value="<?php getInputValue('email2') ?>" 
           required>
       </p>
       <p>
@@ -111,7 +119,7 @@ include('includes/handlers/login-handler.php');
           id="password" 
           name="password" 
           placeholder="Your password" 
-          value="<?php $_POST['password'] ?>"
+          value="<?php getInputValue('password') ?>"
           required>
       </p>
       <p>
@@ -121,7 +129,7 @@ include('includes/handlers/login-handler.php');
           id="password2" 
           name="password2" 
           placeholder="Confirm your password" 
-          value="<?php $_POST['password2'] ?>"
+          value="<?php getInputValue('password2') ?>"
           required>
       </p>
 
