@@ -17,7 +17,7 @@ class Account {
 
     if(empty($errorArray)) {
       //Insert into DB
-      return false;
+      return true;
     } else {
       return false;
     }
@@ -26,8 +26,8 @@ class Account {
   public function getError($error) {
     if(!in_array($error, $this->errorArray)) {
       $error = "";
-      return "<span class='errorMessage'>{$error}</span>";
     }
+    return "<span class='errorMessage'>$error</span>";
   }
 
   private function validateUsername($un) {
@@ -74,7 +74,7 @@ class Account {
     }
 
     if(preg_match('/[^A-Za-z0-9]/', $pw)) {
-      array_push($this->errorArray, 'Your password can only contain numbers and letter');
+      array_push($this->errorArray, 'Your password can only contain numbers and letters');
       return;
     }
 

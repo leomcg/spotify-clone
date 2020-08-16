@@ -20,7 +20,6 @@
     <form method="POST" action="register.php" id="loginForm">
       <h2>Login to your account</h2>
       <p>
-        <?php echo $account->getError('Your username must be between 5 and 25 characters long')?>
         <label for="loginUsername">Username</label>
         <input type="text" id="loginUsername" name="loginUsername" placeholder="e.g. bartSimpson" required>
       </p>
@@ -35,32 +34,37 @@
     <form method="POST" action="register.php" id="registerForm">
       <h2>Create your free account</h2>
       <p>
+        <?php echo $account->getError('Your username must be between 5 and 25 characters long')?>
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="e.g. bartSimpson" required>
       </p>
       <p>
+        <?php echo $account->getError('Your first name must be between 2 and 25 characters long')?>
         <label for="firstName">First name</label>
         <input type="text" id="firstName" name="firstName" placeholder="e.g. Bart" required>
       </p>
       <p>
+        <?php echo $account->getError('Your last name must be between 2 and 25 characters long')?>
         <label for="lastName">Last name</label>
         <input type="text" id="lastName" name="lastName" placeholder="e.g. Simpson" required>
       </p>
       <p>
+        <?php echo $account->getError('Invalid e-mail')?>
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" placeholder="e.g. bart@gmail.com" required>
       </p>
       <p>
+        <?php echo $account->getError('E-mails don\'t match')?>
         <label for="email">Confirm E-mail</label>
         <input type="email" id="email" name="email2" placeholder="Confirm your e-mail" required>
       </p>
-
-
       <p>
+        <?php echo $account->getError('Your password can only contain numbers and letters')?>
         <label for="password">Password</label>
         <input type="password" name="password" id="password" placeholder="Your password" required>
       </p>
       <p>
+        <?php echo $account->getError('Passwords don\'t match')?>
         <label for="password">Confirm Password</label>
         <input type="password" name="password2" id="password" placeholder="Confirm your password" required>
       </p>
