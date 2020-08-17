@@ -3,7 +3,7 @@ include('includes/config.php');
 include('includes/classes/Account.php');
 include('includes/classes/Constants.php');
 
-$account = new Account();
+$account = new Account($con);
 
 include('includes/handlers/register-handler.php');
 include('includes/handlers/login-handler.php');
@@ -29,6 +29,7 @@ function getInputValue($input) {
     <form method="POST" action="register.php" id="loginForm">
       <h2>Login to your account</h2>
       <p>
+        <?php $account->getError(Constants::$invalidCredentials) ?>
         <label for="loginUsername">Username</label>
         <input 
           type="text" 
@@ -55,7 +56,8 @@ function getInputValue($input) {
     <form method="POST" action="register.php" id="registerForm">
       <h2>Create your free account</h2>
       <p>
-        <?php echo $account->getError(Constants::$usernameLength) ?>
+        <?php $account->getError(Constants::$usernameLength) ?>
+        <?php $account->getError(Constants::$usernameExists) ?>
         <label for="username">Username</label>
         <input 
           type="text" 
@@ -66,7 +68,7 @@ function getInputValue($input) {
           required>
       </p>
       <p>
-        <?php echo $account->getError(Constants::$firstNameLength) ?>
+        <?php $account->getError(Constants::$firstNameLength) ?>
         <label for="firstName">First name</label>
         <input 
           type="text" 
@@ -77,7 +79,7 @@ function getInputValue($input) {
           required>
       </p>
       <p>
-        <?php echo $account->getError(Constants::$lastNameLength) ?>
+        <?php $account->getError(Constants::$lastNameLength) ?>
         <label for="lastName">Last name</label>
         <input 
           type="text" 
@@ -88,8 +90,9 @@ function getInputValue($input) {
           required>
       </p>
       <p>
-        <?php echo $account->getError(Constants::$invalidEmail) ?>
-        <?php echo $account->getError(Constants::$emailsDontMatch) ?>
+        <?php $account->getError(Constants::$invalidEmail) ?>
+        <?php $account->getError(Constants::$emailsDontMatch) ?>
+        <?php $account->getError(Constants::$emailExists) ?>
         <label for="email">E-mail</label>
         <input 
           type="email" 
@@ -110,9 +113,9 @@ function getInputValue($input) {
           required>
       </p>
       <p>
-        <?php echo $account->getError(Constants::$invalidPassword) ?>
-        <?php echo $account->getError(Constants::$passwordLength) ?>
-        <?php echo $account->getError(Constants::$passwordsDontMatch) ?>
+        <?php $account->getError(Constants::$invalidPassword) ?>
+        <?php $account->getError(Constants::$passwordLength) ?>
+        <?php $account->getError(Constants::$passwordsDontMatch) ?>
         <label for="password">Password</label>
         <input 
           type="password" 
