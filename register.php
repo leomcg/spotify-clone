@@ -31,15 +31,26 @@ function getInputValue($input)
 </head>
 
 <body>
+  <script>
+    $(document).ready(() => {
+      $('#registerButton').click(() => {
+        $('#loginForm').hide();
+        $('#registerForm').show();
+      })
+
+      $('#loginForm').hide();
+      $('#registerForm').show();
+});
+  </script>
   <div id="background">
     <div id="loginContainer">
       <div id="inputContainer">
         <form autocomplete="off" method="POST" action="register.php" id="loginForm">
           <h2>Login to your account</h2>
           <p>
-            <?php $account->getError(Constants::$invalidCredentials) ?>
             <label for="loginUsername">Username</label>
             <input type="text" id="loginUsername" name="loginUsername" placeholder="e.g. bartSimpson" value="<?php getInputValue('loginUsername') ?>" required>
+            <?php $account->getError(Constants::$invalidCredentials) ?>
           </p>
           <p>
             <label for="loginPassword">Password</label>
@@ -56,51 +67,64 @@ function getInputValue($input)
         <form autocomplete="off" method="POST" action="register.php" id="registerForm">
           <h2>Create your free account</h2>
           <p>
-            <?php $account->getError(Constants::$usernameLength) ?>
-            <?php $account->getError(Constants::$usernameExists) ?>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="e.g. bartSimpson" value="<?php getInputValue('username') ?>" required>
+            <?php $account->getError(Constants::$usernameLength) ?>
+            <?php $account->getError(Constants::$usernameExists) ?>
           </p>
           <p>
-            <?php $account->getError(Constants::$firstNameLength) ?>
             <label for="firstName">First name</label>
             <input type="text" id="firstName" name="firstName" placeholder="e.g. Bart" value="<?php getInputValue('firstName') ?>" required>
+            <?php $account->getError(Constants::$firstNameLength) ?>
           </p>
           <p>
-            <?php $account->getError(Constants::$lastNameLength) ?>
             <label for="lastName">Last name</label>
             <input type="text" id="lastName" name="lastName" placeholder="e.g. Simpson" value="<?php getInputValue('lastName') ?>" required>
+            <?php $account->getError(Constants::$lastNameLength) ?>
           </p>
           <p>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="e.g. bart@gmail.com" value="<?php getInputValue('email') ?>" required>
             <?php $account->getError(Constants::$invalidEmail) ?>
             <?php $account->getError(Constants::$emailsDontMatch) ?>
             <?php $account->getError(Constants::$emailExists) ?>
-            <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="e.g. bart@gmail.com" value="<?php getInputValue('email') ?>" required>
           </p>
           <p>
             <label for="email2">Confirm E-mail</label>
             <input type="email" id="email2" name="email2" placeholder="Confirm your e-mail" value="<?php getInputValue('email2') ?>" required>
           </p>
           <p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Your password" value="<?php getInputValue('password') ?>" required>
             <?php $account->getError(Constants::$invalidPassword) ?>
             <?php $account->getError(Constants::$passwordLength) ?>
             <?php $account->getError(Constants::$passwordsDontMatch) ?>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Your password" value="<?php getInputValue('password') ?>" required>
           </p>
           <p>
             <label for="password2">Confirm Password</label>
             <input type="password" id="password2" name="password2" placeholder="Confirm your password" value="<?php getInputValue('password2') ?>" required>
           </p>
 
-          <button type="submit" name="registerButton">SIGN UP</button>
+          <button type="submit" name="registerButton" id="registerButton">SIGN UP</button>
           <div class="hasAccountText">
             <span id="hideRegister">Already have an account? Log in here.</span>
           </div>
         </form>
       </div>
+
+      <div id="loginText">
+        <h1>Get great music, <br> right now</h1>
+        <h2>Listen to thousands of songs for free</h2>
+        <ul>
+          <li><img src="assets/icons/check.png" alt="" srcset="">Discover music you'll fall in love with</li>
+          <li><img src="assets/icons/check.png" alt="" srcset="">Create your own playlists</li>
+          <li><img src="assets/icons/check.png" alt="" srcset="">Follow your favorite artists</li>
+          <li><img src="assets/icons/check.png" alt="" srcset="">Get recommendations based on your music taste</li>
+        </ul>
+      </div>
     </div>
+ 
+
   </div>
 </body>
 
