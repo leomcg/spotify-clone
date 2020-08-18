@@ -17,6 +17,7 @@ p {
   display: table;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 #loginContainer * {
@@ -145,4 +146,27 @@ p {
 
 #loginText li img {
   margin-right: 10px;
+}
+
+#background .logo {
+  display: flex;
+  align-items: center;
+  width: 170px;
+  justify-content: space-between;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  text-decoration: none;
+}
+
+#background .logo p {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 22px;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+#background .logo img {
+  width: 55px;
 }

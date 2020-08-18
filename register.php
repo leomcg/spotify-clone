@@ -40,9 +40,13 @@ function getInputValue($input)
 
       $('#loginForm').hide();
       $('#registerForm').show();
-});
+    });
   </script>
   <div id="background">
+    <a href="index.php" class="logo">
+      <img src="assets/icons/logo.png" alt="logo">
+      <p>PLAYFY</p>
+    </a>
     <div id="loginContainer">
       <div id="inputContainer">
         <form autocomplete="off" method="POST" action="register.php" id="loginForm">
