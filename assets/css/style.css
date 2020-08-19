@@ -255,7 +255,7 @@ html, body {
 .gridViewItem .gridViewInfo {
   margin-top: 10px;
   font-size: 20px;
-  color: #a0a0a0;
+  color: #939393;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -267,7 +267,7 @@ html, body {
 }
 
 .entityInfo {
-  padding: 40px 0 10px 0;
+  padding-left: 30px;
   display: inline-block;
   width: 100%;
 }
@@ -297,8 +297,92 @@ html, body {
 }
 
 .entityInfo .rightSection p {
-  color: #a0a0a0;
+  color: #939393;
   font-weight: 300;
   font-size: 16px;
+}
+
+.trackListContainer {
+  padding: 0 20px 10px 20px;
+}
+
+.trackList {
+  padding: 0;
+  list-style: none;
+}
+
+.trackListRow {
+  height: 40px;
+  padding: 15px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.trackListRow span {
+  color: #939393
+}
+
+.trackListRow:hover {
+  background-color: #282828;
+}
+
+.trackListRow .trackCount {
+  width: 8%;
+  float: left;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.trackListRow .trackCount img {
+  width: 25px;
+  visibility: hidden;
+  position: absolute;
+  cursor: pointer
+}
+
+.trackListRow:hover .trackCount img {
+  visibility: visible;
+}
+
+.trackListRow:hover .trackCount span {
+  visibility: hidden;
+}
+
+.trackListRow .trackInfo {
+  width: 75%;
+  float: left;
+}
+
+.trackListRow .trackInfo span {
+  display: block;
+}
+
+.trackListRow .trackOptions {
+  width: 5%;
+  float: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trackListRow .trackOptions img {
+  width: 19px;
+  visibility: hidden;
+}
+
+.trackListRow:hover .trackOptions img {
+  visibility: visible;
+}
+
+.trackListRow .trackDuration {
+  width: 12%;
+  text-align: right;
+}
+
+.trackName {
+  color: #fff !important;
+  margin-bottom: 5px;
 }
 
