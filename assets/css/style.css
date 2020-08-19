@@ -266,4 +266,39 @@ html, body {
   font-weight: 400;
 }
 
+.entityInfo {
+  padding: 40px 0 10px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.entityInfo .leftSection {
+  width: 30%;
+  float: left;
+  max-width: 250px;
+}
+
+.entityInfo .leftSection img {
+  width: 100%
+}
+
+.entityInfo .rightSection {
+  width: 70%;
+  float: left;
+  padding: 5px 10px 5px 40px;
+}
+
+.entityInfo .rightSection h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+.entityInfo .rightSection p {
+  color: #a0a0a0;
+  font-weight: 300;
+  font-size: 16px;
+}
 
