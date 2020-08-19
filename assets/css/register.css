@@ -151,7 +151,7 @@ p {
 #background .logo {
   display: flex;
   align-items: center;
-  width: 170px;
+  width: 255px;
   justify-content: space-between;
   position: absolute;
   right: 25px;
@@ -162,11 +162,12 @@ p {
 #background .logo p {
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 22px;
+  letter-spacing: 6px;
+  margin: 0;
+  font-size: 33px;
   font-family: Roboto, Arial, sans-serif;
 }
 
 #background .logo img {
-  width: 55px;
+  width: 82.5px;
 }

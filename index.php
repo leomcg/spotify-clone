@@ -1,43 +1,36 @@
-<?php
-include('includes/config.php');
+<?php include("includes/header.php"); ?>
 
-// if(isset($_SESSION['userLoggedIn'])) {
-//   $userLoggedIn = $_SESSION['userLoggedIn'];
-// } else {
-//   header("Location: register.php");
-// }
+<h1 class="pageHeadingBig">You Might Also Like</h1>
 
-?>
+<div class="gridViewContainer">
+
+	<?php
+		$albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 10");
+    
+		while ($row = mysqli_fetch_array($albumQuery)) {
+      $artistId = $row['artist'];
+      $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE id='$artistId'");
+      $artist = mysqli_fetch_array($artistQuery);
+      $artistName = $artist['name']; 
+
+      echo "<div class='gridViewItem'>
+                <a href='album.php?id=" . $row['id'] . "'> 
+                    <img src='" . $row['artworkPath'] . "'>
+
+                    <div class='gridViewInfo'>"
+                      . $row['title'] . "<br><span> by $artistName </span> " .
+                    "</div>
+                </a>
+            </div>";
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>Document</title>
-</head>
-<body>
+  	}
+	?>
 
-  <div class="mainContainer">
-    <div class="topContainer">
+</div>
 
-      <?php include('includes/navBarContainer.php') ?>
 
-      <div id="mainViewContainer">
-        <div id="mainContent">
 
-        </div>
-      </div>
 
-    </div>
 
-    <?php include('includes/nowPlayingBarContainer.php') ?>
-  
-  </div>
-
- 
-</body>
-</html>
+<?php include("includes/footer.php"); ?>

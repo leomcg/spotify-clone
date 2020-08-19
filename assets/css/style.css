@@ -176,6 +176,7 @@ html, body {
 
 #navBarContainer .navBar .logo p {
   color: #fff;
+  margin: 0;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 22px;
@@ -213,7 +214,7 @@ html, body {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 32px;
+  width: 27px;
   vertical-align: center;
 }
 
@@ -227,5 +228,42 @@ html, body {
   padding: 0 20px;
 }
 
+#mainContent .pageHeadingBig {
+  padding: 20px;
+  text-align: center;
+}
+
+#mainContent .gridViewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+}
+
+.gridViewItem {
+  padding: 30px;
+}
+
+.gridViewItem img {
+  width: 250px;
+}
+
+.gridViewItem a {
+  text-decoration: none;
+}
+
+.gridViewItem .gridViewInfo {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #a0a0a0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.gridViewItem .gridViewInfo span {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 400;
+}
 
 
