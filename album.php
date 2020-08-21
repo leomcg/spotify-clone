@@ -40,8 +40,8 @@ $artist = $album->getArtist();
                 </div>
 
                 <div class='trackInfo'>
-                  <span class='trackName'>" . $albumSong->getTitle() . "</span>
-                  <span class='artistName'>" . $albumSongArtist->getName() . "</span>
+                  <span class='albumTrackName'>" . $albumSong->getTitle() . "</span>
+                  <span class='albumArtistName'>" . $albumSongArtist->getName() . "</span>
                 </div>
 
                 <div class='trackOptions'>
