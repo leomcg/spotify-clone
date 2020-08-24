@@ -1,13 +1,15 @@
 let currentPlaylist = [];
 let audioElement;
+let currentlyPlaying;
 
 
 class Audio {
- constructor() { 
+ constructor() {
     this.audio = document.createElement('audio');
   
-    this.setTrack = src => {
-      this.audio.src = src;
+    this.setTrack = (track) => {
+      this.currentlyPlaying = track;
+      this.audio.src = track.path;
     }
 
     this.play = () => {

@@ -33,7 +33,7 @@ $jsonArray = json_encode($resultArray);
         $('.albumArtwork').attr('src', album.artworkPath);
       });
       
-      audioElement.setTrack(track.path);
+      audioElement.setTrack(track);
       
       $('.trackName').text(track.title);
     })    
@@ -44,6 +44,12 @@ $jsonArray = json_encode($resultArray);
   }
 
   function playSong() {
+    console.log(audioElement.currentlyPlaying.id);
+    console.log(audioElement.audio.currentTime);
+    if(audioElement.audio.currentTime == 0) {
+      $.post('includes/handlers/ajax/updatePlays.php', { songId: audioElement.currentlyPlaying.id });
+    }
+    
     $('.play').hide()
     $('.pause').show()
     audioElement.play();
