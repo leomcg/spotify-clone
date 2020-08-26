@@ -16,7 +16,51 @@ $jsonArray = json_encode($resultArray);
     currentPlaylist = <?php echo $jsonArray; ?>;
     audioElement = new Audio();
     setTrack(currentPlaylist[0], currentPlaylist, false);
+
+    $('.playbackBar .progressBar').mousedown(() => {
+      mouseDown = true;
+    })
+
+    $('.playbackBar .progressBar').mousemove(function(e) {
+      if(mouseDown) {
+        timeFromOffset(e, this);
+      }
+    })
+
+    $('.playbackBar .progressBar').mouseup(function(e) {
+      timeFromOffset(e, this)
+    })
+
+    $('.volumeBar .progressBar').mousedown(() => {
+      mouseDown = true;
+    })
+
+    $('.volumeBar .progressBar').mousemove(function(e) {
+      if(mouseDown) {
+        const percentage = e.offsetX / $(this).width();
+        if(percentage >= 0 && percentage <= 1 ) {
+          audioElement.audio.volume = percentage;
+        }
+      }
+    })
+
+    $('.volumeBar .progressBar').mouseup(function(e) {
+      const percentage = e.offsetX / $(this).width();
+      if(percentage >= 0 && percentage <= 1 ) {
+        audioElement.audio.volume = percentage;
+      }
+    })
+
+    $(document).mouseup(function() {
+      mouseDown = false;
+    })
   });
+
+  function timeFromOffset(mouse, progressBar) {
+    let percentage = mouse.offsetX / $(progressBar).width();
+    let seconds = audioElement.audio.duration * percentage;
+    audioElement.setTime(seconds);
+  }
 
   function setTrack(trackId, newPlaylist, play) {
     
@@ -44,8 +88,6 @@ $jsonArray = json_encode($resultArray);
   }
 
   function playSong() {
-    console.log(audioElement.currentlyPlaying.id);
-    console.log(audioElement.audio.currentTime);
     if(audioElement.audio.currentTime == 0) {
       $.post('includes/handlers/ajax/updatePlays.php', { songId: audioElement.currentlyPlaying.id });
     }
