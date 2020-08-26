@@ -16,6 +16,11 @@ $jsonArray = json_encode($resultArray);
     currentPlaylist = <?php echo $jsonArray; ?>;
     audioElement = new Audio();
     setTrack(currentPlaylist[0], currentPlaylist, false);
+    updateVolumeProgressBar(audioElement.audio);
+
+    $('#nowPlayingBarContainer').on('mousedown touchstart mousemove touchmove', function(e) {
+      e.preventDefault();
+    })
 
     $('.playbackBar .progressBar').mousedown(() => {
       mouseDown = true;
@@ -62,9 +67,36 @@ $jsonArray = json_encode($resultArray);
     audioElement.setTime(seconds);
   }
 
+  function nextSong() {
+    if(repeat) {
+      audioElement.setTime(0);
+      playSong();
+      return;
+    }
+    
+    if (currentIndex === currentPlaylist.length - 1) {
+      currentIndex = 0;
+    } else {
+      currentIndex ++;
+    }
+
+    let trackToPlay = currentPlaylist[currentIndex];
+    setTrack(trackToPlay, currentPlaylist, true);
+  }
+
+  function setRepeat() {
+    repeat = !repeat;
+    let imageName = repeat ? 'repeat-active.png' : 'repeat.png';
+    $('.repeat img').attr('src', 'assets/icons/' + imageName);
+  }
+
   function setTrack(trackId, newPlaylist, play) {
     
+    currentIndex = currentPlaylist.indexOf(trackId);
+    pauseSong()
+    
     $.post('includes/handlers/ajax/getSongJson.php', { songId: trackId }, (data) => {
+      
       let track = JSON.parse(data);
 
       $.post('includes/handlers/ajax/getArtistJson.php', { artistId: track.artist }, (data) => {
@@ -80,6 +112,10 @@ $jsonArray = json_encode($resultArray);
       audioElement.setTrack(track);
       
       $('.trackName').text(track.title);
+
+      if (play) {
+        playSong()
+      }
     })    
 
     if(play) {
@@ -135,10 +171,10 @@ $jsonArray = json_encode($resultArray);
           <button class="controlButton pause" style="display: none;" onclick="pauseSong()">
             <img src="assets/icons/pause2.png" alt="pause">
           </button>
-          <button class="controlButton next">
+          <button class="controlButton next" onclick="nextSong()">
             <img src="assets/icons/next.png" alt="next">
           </button>
-          <button class="controlButton repeat">
+          <button class="controlButton repeat" onclick="setRepeat()">
             <img src="assets/icons/repeat.png" alt="repeat">
           </button>
         </div>
