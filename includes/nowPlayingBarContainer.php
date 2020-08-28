@@ -13,9 +13,9 @@ $jsonArray = json_encode($resultArray);
 <script>
   
   $(document).ready(() => {
-    currentPlaylist = <?php echo $jsonArray; ?>;
+    newPlaylist = <?php echo $jsonArray; ?>;
     audioElement = new Audio();
-    setTrack(currentPlaylist[0], currentPlaylist, false);
+    setTrack(newPlaylist[0], newPlaylist, false);
     updateVolumeProgressBar(audioElement.audio);
 
     $('#nowPlayingBarContainer').on('mousedown touchstart mousemove touchmove', function(e) {
@@ -67,6 +67,17 @@ $jsonArray = json_encode($resultArray);
     audioElement.setTime(seconds);
   }
 
+  function previousSong() {
+    if(audioElement.audio.currentTime >= 3 || currentIndex === 0) {
+      audioElement.setTime(0);
+    } else {
+      currentIndex --;
+
+      let trackToPlay = currentPlaylist[currentIndex];
+      setTrack(trackToPlay, currentPlaylist, true);
+    }
+  }
+
   function nextSong() {
     if(repeat) {
       audioElement.setTime(0);
@@ -80,7 +91,7 @@ $jsonArray = json_encode($resultArray);
       currentIndex ++;
     }
 
-    let trackToPlay = currentPlaylist[currentIndex];
+    let trackToPlay = shuffle ? shuffledPlaylist[currentIndex] : currentPlaylist[currentIndex];
     setTrack(trackToPlay, currentPlaylist, true);
   }
 
@@ -90,9 +101,49 @@ $jsonArray = json_encode($resultArray);
     $('.repeat img').attr('src', 'assets/icons/' + imageName);
   }
 
+  function setShuffle() {
+    shuffle = !shuffle;
+    let imageName = shuffle ? 'shuffle-active.png' : 'shuffle.png';
+    $('.shuffle img').attr('src', 'assets/icons/' + imageName);
+
+    if (shuffle) {
+     shuffleArray(shuffledPlaylist)
+     currentIndex = shuffledPlaylist.indexOf(audioElement.currentlyPlaying.id)
+    } else {
+      currentIndex = currentPlaylist.indexOf(audioElement.currentlyPlaying.id)
+    }
+  }
+  
+
+  function setMute() {
+    audioElement.audio.muted = !audioElement.audio.muted;
+    let imageName = audioElement.audio.muted ? 'mute.png' : 'volume.png';
+    $('.volume img').attr('src', 'assets/icons/' + imageName);
+
+    let visibility = audioElement.audio.muted ? 'hidden' : 'visible';
+    $('.volumeBar .progress').css('visibility', visibility);
+  }
+
+  function removeMute() {
+    audioElement.audio.muted = false;
+    $('.volumeBar .progress').css('visibility', 'visible');
+    $('.volume img').attr('src', 'assets/icons/volume.png');
+  }
+
   function setTrack(trackId, newPlaylist, play) {
-    
-    currentIndex = currentPlaylist.indexOf(trackId);
+
+    if(newPlaylist !== currentPlaylist) {
+      currentPlaylist = newPlaylist;
+      shuffledPlaylist = currentPlaylist.slice();
+      shuffleArray(shuffledPlaylist);
+    }
+
+    if(shuffle) {
+      currentIndex = shuffledPlaylist.indexOf(trackId);
+    } else {
+      currentIndex = currentPlaylist.indexOf(trackId);
+    }
+
     pauseSong()
     
     $.post('includes/handlers/ajax/getSongJson.php', { songId: trackId }, (data) => {
@@ -141,7 +192,6 @@ $jsonArray = json_encode($resultArray);
 
 </script>
 
-
 <div id="nowPlayingBarContainer">
   <div id="nowPlayingBar">
     <div id="nowPlayingLeft">
@@ -159,10 +209,10 @@ $jsonArray = json_encode($resultArray);
     <div id="nowPlayingCenter">
       <div class="content playerControls">
         <div class="buttons">
-          <button class="controlButton shuffle">
+          <button class="controlButton shuffle" onclick="setShuffle()">
             <img src="assets/icons/shuffle.png" alt="shuffle">
           </button>
-          <button class="controlButton previous">
+          <button class="controlButton previous" onclick="previousSong()">
             <img src="assets/icons/previous.png" alt="previous">
           </button>
           <button class="controlButton play">
@@ -192,10 +242,10 @@ $jsonArray = json_encode($resultArray);
 
     <div id="nowPlayingRight">
       <div class="volumeBar">
-        <button class="controlButton volume" title="Volume button">
+        <button class="controlButton volume" title="Volume button" onclick="setMute()">
           <img src="assets/icons/volume.png" alt="Volume">
         </button>
-        <div class="progressBar">
+        <div class="progressBar" onclick="removeMute()">
           <div class="progressBarBg">
             <div class="progress"></div>
           </div>

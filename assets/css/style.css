@@ -115,16 +115,17 @@ html, body {
 }
 
 #nowPlayingLeft .trackInfo .trackName {
-  margin: 6px 0;
+  margin: 5px 0;
   display: inline-block;
   width: 100%;
   font-size: 16px;
+  color: #fff;
 }
 
 #nowPlayingLeft .trackInfo .artistName {
   display: inline-block;
   width: 100%;
-  font-size: 14px;
+  font-size: 15px;
   color: #a0a0a0;
 }
 
@@ -381,8 +382,13 @@ html, body {
   text-align: right;
 }
 
-.trackName {
-  color: #fff !important;
-  margin-bottom: 5px;
+.trackInfo .albumTrackName {
+  color: #fff;
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.trackInfo .albumArtistName {
+  font-size: 15px;
 }
 

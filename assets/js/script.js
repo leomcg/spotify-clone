@@ -1,9 +1,22 @@
 let currentPlaylist = [];
+let shuffledPlaylist = [];
+let tempPlaylist = [];
 let audioElement;
 let currentlyPlaying;
 let mouseDown = false;
 let currentIndex = 0;
 let repeat = false;
+let shuffle = false;
+let userLoggedIn;
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
 
 function formatTime(secs) {
   const time = Math.round(secs);
@@ -35,6 +48,10 @@ function updateVolumeProgressBar(audio) {
 class Audio {
  constructor() {
     this.audio = document.createElement('audio');
+
+    this.audio.addEventListener('ended', function() {
+      nextSong()
+    });
 
     this.audio.addEventListener('canplay', function() {
       $('.progressTime.remaining').text(formatTime(this.duration));
