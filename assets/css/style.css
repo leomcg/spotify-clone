@@ -2,7 +2,7 @@ html, body {
 	padding: 0;
 	margin: 0;
   height: 100%;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   color: #fff;
   background-color: #181818;
 }
@@ -40,7 +40,9 @@ html, body {
 }
 
 #nowPlayingBar .content {
-	width: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .playerControls .buttons {
@@ -71,9 +73,10 @@ html, body {
 
 .progressTime {
 	color: #a0a0a0;
-    font-size: 14px;
-    min-width: 40px;
-    text-align: center;
+  font-size: 14px;
+  min-width: 40px;
+  text-align: center;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 .playbackBar {
@@ -115,10 +118,11 @@ html, body {
 }
 
 #nowPlayingLeft .trackInfo .trackName {
-  margin: 5px 0;
+  margin-bottom: 5px;
   display: inline-block;
   width: 100%;
   font-size: 16px;
+  font-weight: 500;
   color: #fff;
 }
 
@@ -173,6 +177,7 @@ html, body {
   justify-content: space-between;
   margin-bottom: 12px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 #navBarContainer .navBar .logo p {
@@ -196,21 +201,17 @@ html, body {
   position: relative;
   padding: 12px 0;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
   display: block;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
-#navBarContainer .navBar .navItem a {
-  color: #a0a0a0;
-  text-decoration: none;
-}
-
-#navBarContainer .navBar .navItem a:hover {
+#navBarContainer .navBar .navItem:hover span {
   color: #fff;
 }
 
-#navBarContainer .navBar .navItem a img {
+#navBarContainer .navBar .navItem span img {
   position: absolute;
   right: 0;
   top: 50%;
@@ -226,12 +227,14 @@ html, body {
 }
 
 #mainViewContainer #mainContent{
-  padding: 0 20px;
+  padding: 40px 40px 0 40px;
 }
 
 #mainContent .pageHeadingBig {
   padding: 20px;
+  padding-top: 0;
   text-align: center;
+  font-weight: 600;
 }
 
 #mainContent .gridViewContainer {
@@ -249,21 +252,25 @@ html, body {
   width: 250px;
 }
 
-.gridViewItem a {
-  text-decoration: none;
+.gridViewItem span {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.gridViewItem span:hover  {
+  filter: brightness(0.8)
 }
 
 .gridViewItem .gridViewInfo {
   margin-top: 10px;
-  font-size: 20px;
-  color: #939393;
-  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
 .gridViewItem .gridViewInfo span {
   font-size: 15px;
-  color: #fff;
+  color: #939393;
   font-weight: 400;
 }
 
@@ -291,8 +298,8 @@ html, body {
 
 .entityInfo .rightSection h2 {
   margin-top: 0;
-  margin-bottom: 15px;
-  font-weight: 900;
+  margin-bottom: 10px;
+  font-weight: 600;
   letter-spacing: 1px;
   font-size: 30px;
 }
@@ -301,6 +308,8 @@ html, body {
   color: #939393;
   font-weight: 300;
   font-size: 16px;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
 
 .trackListContainer {
@@ -317,6 +326,7 @@ html, body {
   padding: 15px 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .trackListRow span {
@@ -380,12 +390,14 @@ html, body {
 .trackListRow .trackDuration {
   width: 12%;
   text-align: right;
+  font-family: Roboto, Arial, sans-serif;
 }
 
 .trackInfo .albumTrackName {
   color: #fff;
   margin: 5px 0;
   font-size: 16px;
+  font-weight: 500;
 }
 
 .trackInfo .albumArtistName {

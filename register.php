@@ -8,8 +8,7 @@ $account = new Account($con);
 include('includes/handlers/register-handler.php');
 include('includes/handlers/login-handler.php');
 
-function getInputValue($input)
-{
+function getInputValue($input) {
   if (isset($_POST[$input])) {
     echo $_POST[$input];
   }
@@ -42,10 +41,10 @@ function getInputValue($input)
     });
   </script>
   <div id="background">
-    <a href="index.php" class="logo">
+    <span role="link" tabindex="0" onclick="openPage('register.php')" class="logo">
       <img src="assets/icons/logo.png" alt="logo">
       <p>PLAYFY</p>
-    </a>
+    </span>
     <div id="loginContainer">
       <div id="inputContainer">
         <form autocomplete="off" method="POST" action="register.php" id="loginForm">

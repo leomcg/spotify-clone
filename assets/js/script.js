@@ -9,6 +9,26 @@ let repeat = false;
 let shuffle = false;
 let userLoggedIn;
 
+function stopPropagation(event) {
+  $(".trackOptions").click(() => {
+    event.stopPropagation(event);
+  });
+}
+
+
+function openPage(url) {
+  if (url.indexOf('?') === -1) {
+    url = url + '?'
+  }
+
+  const encodedUrl = encodeURI(url + 'userLoggedIn=' + userLoggedIn);
+  $('#mainContent').load(encodedUrl);
+
+  $('body').scrollTop(0);
+
+  history.pushState(null, null, url);
+}
+
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));

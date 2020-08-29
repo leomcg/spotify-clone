@@ -22,7 +22,7 @@ p {
 
 #loginContainer * {
   color: #fff;
-  font-family: 'Roboto', 'Arial', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1em;
 }

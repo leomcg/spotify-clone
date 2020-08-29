@@ -6,7 +6,7 @@ include("includes/classes/Song.php");
 
 if(isset($_SESSION['userLoggedIn'])) {
   $userLoggedIn = $_SESSION['userLoggedIn'];
-  echo "<script>userLoggedIn = $userLoggedIn;</script>";
+  echo "<script>userLoggedIn = '$userLoggedIn';</script>";
 } else {
   header("Location: register.php");
 }
@@ -17,7 +17,8 @@ if(isset($_SESSION['userLoggedIn'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=, initial-scale=1.0">
-  <link href=<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"

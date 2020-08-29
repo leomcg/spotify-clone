@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); 
+<?php include("includes/includedFiles.php"); 
 
 if (isset($_GET['id'])) {
   $albumId = $_GET['id'];
@@ -33,9 +33,9 @@ $artist = $album->getArtist();
         $albumSong = new Song($con, $songId);
         $albumSongArtist = $albumSong->getArtist();
         
-        echo "<li class='trackListRow'>
+        echo "<li class='trackListRow' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'>
                 <div class='trackCount'>
-                  <img class='trackNumber' src='assets/icons/play-white.png' alt='play button' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'>
+                  <img class='trackNumber' src='assets/icons/play-white.png' alt='play button'>
                   <span clas='trackNumber'>$i .</span>
                 </div>
 
@@ -44,7 +44,7 @@ $artist = $album->getArtist();
                   <span class='albumArtistName'>" . $albumSongArtist->getName() . "</span>
                 </div>
 
-                <div class='trackOptions'>
+                <div class='trackOptions' onclick='stopPropagation(event)'>
                   <img class='optionsButton' src='assets/icons/options.png'>
                 </div>
 
@@ -65,9 +65,3 @@ $artist = $album->getArtist();
 
   </ul>
 </div>
-
-
-
-
-
-<?php include("includes/footer.php"); ?>
