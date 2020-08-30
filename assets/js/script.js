@@ -9,6 +9,10 @@ let repeat = false;
 let shuffle = false;
 let userLoggedIn;
 
+function playFirstSong() {
+  setTrack(tempPlaylist[0], tempPlaylist, true);
+}
+
 function stopPropagation(event) {
   $(".trackOptions").click(() => {
     event.stopPropagation(event);

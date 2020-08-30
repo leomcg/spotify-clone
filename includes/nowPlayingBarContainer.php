@@ -149,15 +149,20 @@ $jsonArray = json_encode($resultArray);
     $.post('includes/handlers/ajax/getSongJson.php', { songId: trackId }, (data) => {
       
       let track = JSON.parse(data);
+      console.log(track)
 
       $.post('includes/handlers/ajax/getArtistJson.php', { artistId: track.artist }, (data) => {
         let artist = JSON.parse(data);
+        console.log(artist);
         $('.artistName').text(artist.name);
+        $('.artistName').attr('onclick', "openPage('artist.php?id=" + artist.id + "')")
       });
 
       $.post('includes/handlers/ajax/getAlbumJson.php', { albumId: track.album }, (data) => {
         let album = JSON.parse(data);
         $('.albumArtwork').attr('src', album.artworkPath);
+        $('.albumArtwork').attr('onclick', "openPage('album.php?id=" + album.id + "')")
+        $('.trackName').attr('onclick', "openPage('album.php?id=" + album.id + "')")
       });
       
       audioElement.setTrack(track);
@@ -197,11 +202,11 @@ $jsonArray = json_encode($resultArray);
     <div id="nowPlayingLeft">
       <div class="content">
         <span class="albumLink">
-          <img class="albumArtwork" src="" alt="generic cover">
+          <img class="albumArtwork" src="" alt="generic cover" role="link" tabindex="0">
         </span>
         <div class="trackInfo">
-          <span class="trackName"></span>
-          <span class="artistName">Leonardo Gonçalves</span>
+          <span class="trackName" role="link" tabindex="0"></span>
+          <span class="artistName" role="link" tabindex="0">Leonardo Gonçalves</span>
         </div>
       </div>
     </div>

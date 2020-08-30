@@ -111,6 +111,7 @@ html, body {
   margin-right: 15px;
   float: left;
   background-size: cover;
+  cursor: pointer;
 }
 
 #nowPlayingLeft .trackInfo {
@@ -124,6 +125,7 @@ html, body {
   font-size: 16px;
   font-weight: 500;
   color: #fff;
+  cursor: pointer;
 }
 
 #nowPlayingLeft .trackInfo .artistName {
@@ -131,6 +133,7 @@ html, body {
   width: 100%;
   font-size: 15px;
   color: #a0a0a0;
+  cursor: pointer;
 }
 
 #nowPlayingRight {
@@ -275,7 +278,6 @@ html, body {
 }
 
 .entityInfo {
-  padding-left: 30px;
   display: inline-block;
   width: 100%;
 }
@@ -283,6 +285,7 @@ html, body {
 .entityInfo .leftSection {
   width: 30%;
   float: left;
+  padding-left: 20px;
   max-width: 250px;
 }
 
@@ -404,3 +407,54 @@ html, body {
   font-size: 15px;
 }
 
+.entityInfo .centerSection .artistInfo {
+  text-align: center;
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  text-transform: uppercase;
+  padding: 15px 70px;
+  cursor: pointer;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: Roboto, Arial, Sans;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.button:active {
+  transform: translateY(5px)
+}
+
+.button:hover {
+  background-color: rgba(250, 250, 250, 0.1);
+}
+
+.button.green {
+  background-color: #1DB954;
+  border-color: #1DB954;
+}
+
+.button.green:hover {
+  filter: brightness(0.9)
+}
+
+.borderBottom {
+  border-bottom: 1px solid #939393;
+  margin-bottom: 20px;
+}
+
+.artistPageTitle {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
