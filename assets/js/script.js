@@ -25,7 +25,7 @@ function openPage(url) {
     url = url + '?'
   }
 
-  const encodedUrl = encodeURI(url + 'userLoggedIn=' + userLoggedIn);
+  const encodedUrl = encodeURI(url + '&userLoggedIn=' + userLoggedIn);
   $('#mainContent').load(encodedUrl);
 
   $('body').scrollTop(0);

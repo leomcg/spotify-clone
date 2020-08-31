@@ -149,11 +149,9 @@ $jsonArray = json_encode($resultArray);
     $.post('includes/handlers/ajax/getSongJson.php', { songId: trackId }, (data) => {
       
       let track = JSON.parse(data);
-      console.log(track)
 
       $.post('includes/handlers/ajax/getArtistJson.php', { artistId: track.artist }, (data) => {
         let artist = JSON.parse(data);
-        console.log(artist);
         $('.artistName').text(artist.name);
         $('.artistName').attr('onclick', "openPage('artist.php?id=" + artist.id + "')")
       });

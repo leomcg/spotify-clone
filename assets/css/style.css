@@ -5,6 +5,7 @@ html, body {
   font-family: Montserrat, Arial, sans-serif;
   color: #fff;
   background-color: #181818;
+  -webkit-appearance: none;
 }
 
 #nowPlayingBarContainer {
@@ -259,7 +260,8 @@ html, body {
   cursor: pointer;
   transition: all 0.2s;
 }
-.gridViewItem span:hover  {
+
+.gridViewItem span img:hover  {
   filter: brightness(0.8)
 }
 
@@ -277,9 +279,15 @@ html, body {
   font-weight: 400;
 }
 
+.gridViewItem .gridViewInfo span:hover {
+  filter: brightness(0.8);
+  color: #fff;
+}
+
 .entityInfo {
   display: inline-block;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 .entityInfo .leftSection {
@@ -322,6 +330,7 @@ html, body {
 .trackList {
   padding: 0;
   list-style: none;
+  margin: 0;
 }
 
 .trackListRow {
@@ -446,6 +455,8 @@ html, body {
 
 .borderBottom {
   border-bottom: 1px solid #939393;
+  padding: 0;
+  padding: 15px;
   margin-bottom: 20px;
 }
 
@@ -457,4 +468,47 @@ html, body {
   font-size: 30px;
   text-align: center;
   text-transform: uppercase;
+}
+
+.searchContainer {
+  background-color: #242424;
+  padding: 20px 28px;
+  margin-bottom: 30px;
+}
+
+.searchContainer h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.searchContainer .searchInput {
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 65px;
+}
+
+.searchContainer .searchInput:focus {
+  outline: none;
+}
+
+#navBarContainer .navBar .navItem:focus {
+  outline: none;
+}
+
+.searchResultRow {
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+}
+
+.searchResultRow:hover  {
+  color: #a0a0a0;
+}
+
+.artistInfo .albumArtistName {
+  margin-top: 0;
 }
