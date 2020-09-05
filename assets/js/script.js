@@ -13,6 +13,17 @@ function playFirstSong() {
   setTrack(tempPlaylist[0], tempPlaylist, true);
 }
 
+function openModal() {
+  $('.modal').css('display', 'flex');
+  $('.promptInput').focus();
+  $('.promptInput').val('');
+}
+
+function createPlaylist(username) {
+  const playlistName = $('.promptInput').val();
+  alert(playlistName);
+}
+
 function stopPropagation(event) {
   $(".trackOptions").click(() => {
     event.stopPropagation(event);

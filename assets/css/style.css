@@ -424,7 +424,7 @@ html, body {
   background-color: transparent;
   border: 2px solid #fff;
   text-transform: uppercase;
-  padding: 15px 70px;
+  padding: 14px 26px;
   cursor: pointer;
   border-radius: 50px;
   color: #fff;
@@ -432,7 +432,7 @@ html, body {
   font-size: 15px;
   font-family: Roboto, Arial, Sans;
   transition: all 0.2s;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   margin-bottom: 40px;
 }
 
@@ -511,4 +511,64 @@ html, body {
 
 .artistInfo .albumArtistName {
   margin-top: 0;
+}
+
+.buttonItems {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.prompt {
+  position: relative;
+  background-color: #181818;
+  height: 40%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.prompt input {
+  width: 50%;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 25px;
+  border-bottom: 1px solid #a0a0a0;
+  padding-bottom: 8px;
+}
+
+.prompt input:focus {
+  outline: none;
+}
+
+.prompt button {
+  display: block;
+  margin-bottom: 0; 
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
