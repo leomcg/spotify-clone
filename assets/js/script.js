@@ -7,7 +7,6 @@ let mouseDown = false;
 let currentIndex = 0;
 let repeat = false;
 let shuffle = false;
-let userLoggedIn;
 
 function playFirstSong() {
   setTrack(tempPlaylist[0], tempPlaylist, true);
@@ -19,9 +18,19 @@ function openModal() {
   $('.promptInput').val('');
 }
 
-function createPlaylist(username) {
+function createPlaylist() {
   const playlistName = $('.promptInput').val();
-  alert(playlistName);
+  
+  $.post("includes/handlers/ajax/createPlaylist.php", { name: playlistName, username: userLoggedIn })
+  .done((error) => {
+
+    if(error) {
+      alert(error);
+      return;
+    }
+
+    openPage("yourMusic.php");
+  })
 }
 
 function stopPropagation(event) {

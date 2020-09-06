@@ -8,9 +8,9 @@ $account = new Account($con);
 include('includes/handlers/register-handler.php');
 include('includes/handlers/login-handler.php');
 
-function getInputValue($input) {
-  if (isset($_POST[$input])) {
-    echo $_POST[$input];
+function getInputValue($loginUsername) {
+  if (isset($_POST[$loginUsername])) {
+    echo $_POST[$loginUsername];
   }
 }
 ?>
@@ -51,7 +51,7 @@ function getInputValue($input) {
           <h2>Login to your account</h2>
           <p>
             <label for="loginUsername">Username</label>
-            <input type="text" id="loginUsername" name="loginUsername" placeholder="e.g. bartSimpson" value="<?php getInputValue('loginUsername') ?>" required>
+            <input type="text" id="loginUsername" name="loginUsername" placeholder="e.g. bartSimpson" value="<?php getInputValue('loginUsername') ?>" required autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
             <?php $account->getError(Constants::$invalidCredentials) ?>
           </p>
           <p>

@@ -1,3 +1,4 @@
+
 <div id="navBarContainer">
   <nav class="navBar">
     <span role="link" tabindex="0" onclick="openPage('index.php')" class="logo">
@@ -23,7 +24,7 @@
       </div>
 
       <div role="link" tabindex="0" onclick="openPage('profile.php')" class="navItem">
-        <span class="navItemLink"><?php echo $userLoggedIn ?></span>
+        <span class="navItemLink"><?php echo $username ?></span>
       </div>
     </div>
   </nav>

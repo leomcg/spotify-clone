@@ -536,8 +536,9 @@ html, body {
 .prompt {
   position: relative;
   background-color: #181818;
-  height: 40%;
+  height: calc(40% - 90px);
   width: 30%;
+  min-width: 400px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -571,4 +572,44 @@ html, body {
   color: #fff;
   font-size: 20px;
   cursor: pointer;
+}
+
+span [role='link'],
+div [role='link'] {
+  cursor: pointer;
+}
+
+span [role='link']:focus,
+div [role='link']:focus {
+  outline: none;
+}
+
+.gridViewPlaylist {
+  padding: 30px;
+}
+
+.gridViewPlaylist:hover {
+  cursor: pointer;
+}
+
+.gridViewPlaylist:hover .playlistName {
+  color: #fff;
+}
+
+.gridViewPlaylist .playlistImage {
+  width: 96px;
+  font-weight: 600;
+  border: 1px solid #a0a0a0;
+  margin-bottom: 8px;
+}
+
+.gridViewPlaylist .playlistName {
+  font-size: 18px;
+  color: #a0a0a0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.rightSection button {
+  margin-top: 8px;
 }
