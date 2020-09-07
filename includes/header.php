@@ -19,6 +19,7 @@ if(isset($_SESSION['userLoggedIn'])) {
   <meta name="viewport" content="width=, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/fa/css/all.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"

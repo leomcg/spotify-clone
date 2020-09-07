@@ -12,6 +12,11 @@ function playFirstSong() {
   setTrack(tempPlaylist[0], tempPlaylist, true);
 }
 
+function openPlaylist(id) {
+  $('#chevron-' + id).toggleClass('rotated');
+  $('.playlist-' + id).toggleClass('visible');
+}
+
 function openModal() {
   $('.modal').css('display', 'flex');
   $('.promptInput').focus();
@@ -31,6 +36,23 @@ function createPlaylist() {
 
     openPage("yourMusic.php");
   })
+}
+
+function deletePlaylist(id) {
+  const prompt = confirm("Delete playlist?");
+
+  if(prompt) {
+    $.post("includes/handlers/ajax/deletePlaylist.php", { playlistId: id })
+    .done((error) => {
+  
+      if(error) {
+        alert(error);
+        return;
+      }
+  
+      openPage("yourMusic.php");
+    })
+  }
 }
 
 function stopPropagation(event) {

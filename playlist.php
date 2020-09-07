@@ -8,11 +8,12 @@ if (isset($_GET['id'])) {
 
 $playlist = new playlist($con, $playlistId);
 $owner = new User($con, $playlist->getOwner());
+
 ?>
 
 <div class="entityInfo">
   <div class="leftSection">
-    <img src="assets/icons/playlist.png" alt="Playlist logo">
+    <img class="playlistIcon" src="assets/icons/playlist.png" alt="Playlist logo">
   </div>
 
   <div class="rightSection">
@@ -22,30 +23,31 @@ $owner = new User($con, $playlist->getOwner());
       >By <?php echo $owner->getUsername() ?>
     </p>
     <p><?php echo $playlist->getNumberOfSongs() ?> songs</p>
-    <button class="button">DELETE PLAYLIST</button>
+    <button class="button green" onclick="playFirstSong()">play</button>
+    <button class="button delete" onclick="deletePlaylist('<?php echo $playlistId ?>')">DELETE PLAYLIST</button>
   </div>
 </div>
 
 <div class="trackListContainer">
   <ul class="trackList">
     <?php 
-      $songIdArray = array(); //$album->getSongsIds();
+      $songIdArray = $playlist->getSongsIds();
       
       $i = 0;
       foreach($songIdArray as $songId) {
         $i++;
-        $albumSong = new Song($con, $songId);
-        $albumSongArtist = $albumSong->getArtist();
+        $playlistSong = new Song($con, $songId);
+        $songArtist = $playlistSong->getArtist();
         
-        echo "<li class='trackListRow' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'>
+        echo "<li class='trackListRow' onclick='setTrack(\"". $playlistSong->getId() ."\", tempPlaylist, true)'>
                 <div class='trackCount'>
                   <img class='trackNumber' src='assets/icons/play-white.png' alt='play button'>
                   <span clas='trackNumber'>$i .</span>
                 </div>
 
                 <div class='trackInfo'>
-                  <span class='albumTrackName'>" . $albumSong->getTitle() . "</span>
-                  <span class='albumArtistName'>" . $albumSongArtist->getName() . "</span>
+                  <span class='albumTrackName'>" . $playlistSong->getTitle() . "</span>
+                  <span class='albumArtistName'>" . $songArtist->getName() . "</span>
                 </div>
 
                 <div class='trackOptions' onclick='stopPropagation(event)'>
@@ -53,7 +55,7 @@ $owner = new User($con, $playlist->getOwner());
                 </div>
 
                 <div class='trackDuration'>
-                  <span class='trackDuration'>" . $albumSong->getDuration() . "</span>
+                  <span class='trackDuration'>" . $playlistSong->getDuration() . "</span>
                 </div>
         
               </li>";

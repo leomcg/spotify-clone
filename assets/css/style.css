@@ -302,6 +302,7 @@ html, body {
 }
 
 .entityInfo .rightSection {
+  position: relative;
   width: 70%;
   float: left;
   padding: 5px 10px 5px 40px;
@@ -424,7 +425,7 @@ html, body {
   background-color: transparent;
   border: 2px solid #fff;
   text-transform: uppercase;
-  padding: 14px 26px;
+  padding: 12px 26px;
   cursor: pointer;
   border-radius: 50px;
   color: #fff;
@@ -434,6 +435,10 @@ html, body {
   transition: all 0.2s;
   letter-spacing: 2px;
   margin-bottom: 40px;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button:active {
@@ -585,7 +590,10 @@ div [role='link']:focus {
 }
 
 .gridViewPlaylist {
-  padding: 30px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #a0a0a0;
 }
 
 .gridViewPlaylist:hover {
@@ -597,10 +605,10 @@ div [role='link']:focus {
 }
 
 .gridViewPlaylist .playlistImage {
-  width: 96px;
+  width: 30px;
   font-weight: 600;
   border: 1px solid #a0a0a0;
-  margin-bottom: 8px;
+  margin: 0 8px;
 }
 
 .gridViewPlaylist .playlistName {
@@ -610,6 +618,24 @@ div [role='link']:focus {
   letter-spacing: 1px;
 }
 
-.rightSection button {
+.rightSection .delete {
+  position: absolute;
+  top: 25%;
+  right: 0;
+}
+
+.rightSection .green {
   margin-top: 8px;
+}
+
+.playlistIcon {
+  border: 1px solid #a0a0a0;
+}
+
+.visible {
+  display: flex !important;
+}
+
+.rotated {
+  transform: rotate(180deg);
 }
