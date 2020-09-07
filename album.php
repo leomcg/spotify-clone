@@ -37,7 +37,7 @@ $artist = $album->getArtist();
         $albumSong = new Song($con, $songId);
         $albumSongArtist = $albumSong->getArtist();
         
-        echo "<li class='trackListRow' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'>
+        echo "<li class='trackListRow' id='row-" . $i . "' onclick='setTrack(\"". $albumSong->getId() ."\", tempPlaylist, true)'>
                 <div class='trackCount'>
                   <img class='trackNumber' src='assets/icons/play-white.png' alt='play button'>
                   <span clas='trackNumber'>$i .</span>
@@ -48,8 +48,8 @@ $artist = $album->getArtist();
                   <span class='albumArtistName'>" . $albumSongArtist->getName() . "</span>
                 </div>
 
-                <div class='trackOptions' onclick='stopPropagation(event)'>
-                  <img class='optionsButton' src='assets/icons/options.png'>
+                <div class='trackOptions'>
+                  <img class='optionsButton' src='assets/icons/options.png' onclick='openOptionsMenu(this, event," . $i . ")'>
                 </div>
 
                 <div class='trackDuration'>
@@ -69,3 +69,19 @@ $artist = $album->getArtist();
 
   </ul>
 </div>
+
+<nav class="optionsMenu" onmouseover="$(this).show()" onmouseout="$(this).hide()">
+  <input type="hidden" class="songId">
+  <div class="item">
+    <img src="assets/icons/playlist.png" alt="" srcset="">
+    <span>Add to playlist</span> 
+  </div>
+  <div class="item">
+    <img src="assets/icons/micro.png" alt="" srcset="">
+    <span>Go to artist</span> 
+  </div>
+  <div class="item">
+    <img src="assets/icons/share.png" alt="" srcset="">
+    <span>Share</span> 
+  </div>
+</nav>

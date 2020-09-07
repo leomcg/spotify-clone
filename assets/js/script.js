@@ -12,6 +12,34 @@ function playFirstSong() {
   setTrack(tempPlaylist[0], tempPlaylist, true);
 }
 
+function openOptionsMenu(button, event, i) {
+  console.log(i)
+  event.stopPropagation();
+
+  const menu = $('.optionsMenu');
+
+  const scrollTop = $(window).scrollTop(); // Distance from top of window to top of document
+  const elementOffset = $(button).offset().top; // Distance fom top of document
+
+  const top = elementOffset - scrollTop;
+  const left = $(button).position().left;
+ 
+  menu.css({
+    'top': top + 'px',
+    'left': left + 'px',
+    'display': 'inline'
+  });
+
+  $('.optionsMenu').hover(
+  () => {
+    $('#row-' + i).css('background-color', '#282828');
+    i = null;
+  }, 
+  () => {
+    $('.trackListRow').css('background-color', '#181818');
+  })
+}
+
 function openPlaylist(id) {
   $('#chevron-' + id).toggleClass('rotated');
   $('.playlist-' + id).toggleClass('visible');

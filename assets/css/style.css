@@ -347,7 +347,7 @@ html, body {
 }
 
 .trackListRow:hover {
-  background-color: #282828;
+  background-color: #282828 !important;
 }
 
 .trackListRow .trackCount {
@@ -541,6 +541,7 @@ html, body {
 .prompt {
   position: relative;
   background-color: #181818;
+  border: 1px solid rgba(0, 0, 0);
   height: calc(40% - 90px);
   width: 30%;
   min-width: 400px;
@@ -638,4 +639,32 @@ div [role='link']:focus {
 
 .rotated {
   transform: rotate(180deg);
+}
+
+.optionsMenu {
+  display: none;
+  position: fixed;
+  background-color: #242424;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: 200px;
+  z-index: 1000;
+}
+
+.optionsMenu .item {
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  color: #a0a0a0;
+  vertical-align: center;
+}
+
+.optionsMenu .item img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.optionsMenu .item:hover {
+  background-color: #282828;
+  box-sizing: border-box;
+  color: #fff;
 }
