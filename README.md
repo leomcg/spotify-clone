@@ -9,16 +9,16 @@
 - Front-end: Javascript, HTML and CSS
 - Back-end: PHP and MySQL
 
-# Register
+# Register page
 ![Register](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/register.png?raw=true)
 
-# Login
+# Login page
 ![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/login.png?raw=true)
 
 # Form validation
 ![Form validation](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/form-validation.png?raw=true)
 
-# Main Page
+# Main page
 ![Main page 1](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/main-page.png?raw=true)
 ![Main page 2](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/main-page-2.png?raw=true)
 
