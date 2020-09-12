@@ -1,6 +1,6 @@
 # Features
 - Beautiful UI (check screenshots below)
-- Playback: play, pause, next, previous, suffle, repeat, volume, mute, progress bar
+- Playback: play, pause, next, previous, shuffle, repeat, volume, mute, progress bar, time elapsed, time remaining
 - Create playlists
 - Browse Artists
 - Browse Albums
