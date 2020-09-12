@@ -8,7 +8,7 @@ if (isset($_GET['term'])) {
 ?>
 
 <div class="searchContainer">
-  <h4>Search for artists, albums, songs or playlists</h4>
+  <h4>Search for artists, albums or songs</h4>
   <input type="text" class="searchInput" placeholder="Search..." value="<?php echo $term ?>" onfocus="var val=this.value; this.value=''; this.value= val;" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 </div>
 

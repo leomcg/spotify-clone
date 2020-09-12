@@ -82,7 +82,7 @@ include('includes/includedFiles.php');
 <div class="modal" onclick="$('.modal').hide()">
   <form action="#" class="prompt" onclick="event.stopPropagation();" onsubmit="createPlaylist();">
     <div class="close" onclick="$('.modal').hide()">&#10005;</div>
-    <input class="promptInput" type="text" placeholder="Playslist name..." autocomplete="off" autocorrect="off"
+    <input class="promptInput" type="text" placeholder="Playlist name..." autocomplete="off" autocorrect="off"
       autocapitalize="off" spellcheck="false">
     <button type="submit" class="button green">Create</button>
   </form>

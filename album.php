@@ -49,6 +49,7 @@ $artist = $album->getArtist();
                 </div>
 
                 <div class='trackOptions'>
+                  <input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
                   <img class='optionsButton' src='assets/icons/options.png' onclick='openOptionsMenu(this, event," . $i . ")'>
                 </div>
 
@@ -74,7 +75,7 @@ $artist = $album->getArtist();
   <input type="hidden" class="songId">
   <div class="item">
     <img src="assets/icons/playlist.png" alt="" srcset="">
-    <span>Add to playlist</span> 
+    <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
   </div>
   <div class="item">
     <img src="assets/icons/micro.png" alt="" srcset="">

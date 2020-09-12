@@ -254,6 +254,8 @@ html, body {
 
 .gridViewItem img {
   width: 250px;
+  height: 250px;
+  background-size: cover;
 }
 
 .gridViewItem span {
@@ -617,6 +619,7 @@ div [role='link']:focus {
   color: #a0a0a0;
   font-weight: 600;
   letter-spacing: 1px;
+  margin: 0 15px
 }
 
 .rightSection .delete {
@@ -646,16 +649,21 @@ div [role='link']:focus {
   position: fixed;
   background-color: #242424;
   border: 1px solid rgba(0, 0, 0, 0.8);
-  width: 200px;
+  max-width: 200px;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 .optionsMenu .item {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  padding: 13px;
   width: 100%;
   cursor: pointer;
   color: #a0a0a0;
   vertical-align: center;
+  background-color: #242424;
+  box-sizing: border-box;
 }
 
 .optionsMenu .item img {
@@ -667,4 +675,29 @@ div [role='link']:focus {
   background-color: #282828;
   box-sizing: border-box;
   color: #fff;
+}
+
+.playlist {
+  width: 170px;
+  cursor: pointer;
+  color: #a0a0a0;
+  vertical-align: center;
+  background-color: #242424;
+  border: none;
+  font-size: 16px;
+  font-family: montserrat, arial, sans-serif;
+}
+
+.playlist:focus {
+  outline: none;
+}
+
+.optionsMenu .item:hover .playlist {
+  background-color: #282828;
+  color: #fff;
+}
+
+.playlist option {
+  font-size: 16px;
+  font-family: montserrat, arial, sans-serif;
 }

@@ -13,10 +13,10 @@ function playFirstSong() {
 }
 
 function openOptionsMenu(button, event, i) {
-  console.log(i)
   event.stopPropagation();
 
   const menu = $('.optionsMenu');
+  const menuWidth = menu.width()
 
   const scrollTop = $(window).scrollTop(); // Distance from top of window to top of document
   const elementOffset = $(button).offset().top; // Distance fom top of document

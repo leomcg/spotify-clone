@@ -18,13 +18,19 @@
       <div role="link" tabindex="0" onclick="openPage('browse.php')" class="navItem">
         <span class="navItemLink">Browse</span>
       </div>
+      <div role="link" tabindex="0" onclick="openPage('browse.php')" class="navItem">
+        <span class="navItemLink">Artists</span>
+      </div>
+      <div role="link" tabindex="0" onclick="openPage('browse.php')" class="navItem">
+        <span class="navItemLink">Albums</span>
+      </div>
 
       <div role="link" tabindex="0" onclick="openPage('yourMusic.php')" class="navItem">
         <span class="navItemLink">Your Music</span>
       </div>
 
       <div role="link" tabindex="0" onclick="openPage('profile.php')" class="navItem">
-        <span class="navItemLink"><?php echo $username ?></span>
+        <span class="navItemLink">Settings</span>
       </div>
     </div>
   </nav>
