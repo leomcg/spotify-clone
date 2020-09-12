@@ -12,29 +12,29 @@
 ![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/login.png?raw=true)
 
 # Form validation
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/form-validation.png?raw=true)
+![Form validation](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/form-validation.png?raw=true)
 
 # Main Page
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/main-page.png?raw=true)
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/main-page-2.png?raw=true)
+![Main page 1](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/main-page.png?raw=true)
+![Main page 2](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/main-page-2.png?raw=true)
 
 # Playlists
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/new-playlist.png?raw=true)
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/playlists-1.png?raw=true)
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/playlists-2.png?raw=true)
+![playlists 1](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/new-playlist.png?raw=true)
+![playlists 2](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/playlists-1.png?raw=true)
+![playlists 3](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/playlists-2.png?raw=true)
 
 # Song options menu
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/options-menu.png?raw=true)
+![Song options](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/options-menu.png?raw=true)
 
 # Search
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/search.png?raw=true)
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/search-1.png?raw=true)
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/search-2.png?raw=true)
+![search-1](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/search.png?raw=true)
+![search-2](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/search-2.png?raw=true)
+![Login-3](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/search-3.png?raw=true)
 
-# Album
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/album.png?raw=true)
+# Album page
+![album](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/album.png?raw=true)
 
-# Artist
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/artist-page.png?raw=true)
-![Login](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/artist-page-2.png?raw=true)
+# Artist page
+![artist-1](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/artist-page.png?raw=true)
+![artist-2](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/artist-page-2.png?raw=true)
 
