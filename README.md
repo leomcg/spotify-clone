@@ -1,4 +1,6 @@
 # Features
+- Front-end: Javascript, HTML and CSS
+- Back-end: PHP and MySQL
 - Beautiful UI (check screenshots below)
 - Playback: play, pause, next, previous, shuffle, repeat, volume, mute, progress bar, time elapsed, time remaining
 - Create playlists
