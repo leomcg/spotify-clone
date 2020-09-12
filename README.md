@@ -1,11 +1,13 @@
 # Features
-- Front-end: Javascript, HTML and CSS
-- Back-end: PHP and MySQL
 - Beautiful UI (check screenshots below)
 - Playback: play, pause, next, previous, shuffle, repeat, volume, mute, progress bar, time elapsed, time remaining
 - Create playlists
 - Browse Artists
 - Browse Albums
+
+# Languages
+- Front-end: Javascript, HTML and CSS
+- Back-end: PHP and MySQL
 
 # Register
 ![Register](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/register.png?raw=true)
