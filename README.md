@@ -27,6 +27,7 @@
 ![playlists 2](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/playlists-1.png?raw=true)
 ![playlists 3](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/playlists-2.png?raw=true)
 ![playlists 4](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/playlist-page.png?raw=true)
+![playlists 4](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/playlist-delete.png?raw=true)
 
 # Song options menu
 ![Song options](https://github.com/leomcg/spotify-clone/blob/develop/assets/images/screenshots/options-menu.png?raw=true)
