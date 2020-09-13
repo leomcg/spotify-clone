@@ -43,8 +43,9 @@ $artist = new Artist($con, $artistId);
                   <span class='albumArtistName'>" . $albumSongArtist->getName() . "</span>
                 </div>
 
-                <div class='trackOptions' onclick='stopPropagation(event)'>
-                  <img class='optionsButton' src='assets/icons/options.png'>
+                <div class='trackOptions'>
+                  <input type='hidden' class='songId' value='" . $albumSong->getId() . "'>
+                  <img class='optionsButton' src='assets/icons/options.png' onclick='openOptionsMenu(this, event," . $i . ")'>
                 </div>
 
                 <div class='trackDuration'>
@@ -89,4 +90,20 @@ $artist = new Artist($con, $artistId);
 	?>
 
 </div>
+
+<nav class="optionsMenu" onmouseover="$(this).show()" onmouseout="$(this).hide()">
+  <div class="item">
+    <input type="hidden" class="songId">
+    <img src="assets/icons/playlist.png" alt="" srcset="">
+    <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
+  </div>
+  <div class="item">
+    <img src="assets/icons/micro.png" alt="" srcset="">
+    <span>Go to artist</span> 
+  </div>
+  <div class="item">
+    <img src="assets/icons/share.png" alt="" srcset="">
+    <span>Share</span> 
+  </div>
+</nav>
 

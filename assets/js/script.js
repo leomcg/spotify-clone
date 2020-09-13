@@ -71,6 +71,24 @@ function openModal() {
   $('.promptInput').val('');
 }
 
+function deleteFromPlaylist(button, playlistId) {
+  const songId = $(button).prevAll('.songId').val();
+
+  if(prompt) {
+    $.post("includes/handlers/ajax/deleteFromPlaylist.php", { playlistId: playlistId, songId: songId })
+    .done((error) => {
+  
+      if(error) {
+        alert(error);
+        return;
+      }
+  
+      openPage("playlist.php?id=" + playlistId);
+    })
+  }
+
+}
+
 function createPlaylist() {
   const playlistName = $('.promptInput').val();
   

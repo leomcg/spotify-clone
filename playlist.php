@@ -39,7 +39,7 @@ $owner = new User($con, $playlist->getOwner());
         $playlistSong = new Song($con, $songId);
         $songArtist = $playlistSong->getArtist();
         
-        echo "<li class='trackListRow' onclick='setTrack(\"". $playlistSong->getId() ."\", tempPlaylist, true)'>
+        echo "<li class='trackListRow' id='row-" . $i . "' onclick='setTrack(\"". $playlistSong->getId() ."\", tempPlaylist, true)'>
                 <div class='trackCount'>
                   <img class='trackNumber' src='assets/icons/play-white.png' alt='play button'>
                   <span clas='trackNumber'>$i .</span>
@@ -50,8 +50,9 @@ $owner = new User($con, $playlist->getOwner());
                   <span class='albumArtistName'>" . $songArtist->getName() . "</span>
                 </div>
 
-                <div class='trackOptions' onclick='stopPropagation(event)'>
-                  <img class='optionsButton' src='assets/icons/options.png'>
+                <div class='trackOptions'>
+                  <input type='hidden' class='songId' value='" . $playlistSong->getId() . "'>
+                  <img class='optionsButton' src='assets/icons/options.png' onclick='openOptionsMenu(this, event," . $i . ")'>
                 </div>
 
                 <div class='trackDuration'>
@@ -71,3 +72,24 @@ $owner = new User($con, $playlist->getOwner());
 
   </ul>
 </div>
+
+<nav class="optionsMenu" onmouseover="$(this).show()" onmouseout="$(this).hide()">
+  <input type="hidden" class="songId">
+  <div class="item">
+    <input type="hidden" class="songId">
+    <img src="assets/icons/playlist.png" alt="" srcset="">
+    <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
+  </div>
+  <div class="item">
+    <img src="assets/icons/micro.png" alt="" srcset="">
+    <span>Go to artist</span> 
+  </div>
+  <div class="item">
+    <img src="assets/icons/share.png" alt="" srcset="">
+    <span>Share</span> 
+  </div>
+  <div class="item" onclick="deleteFromPlaylist(this, '<?php echo $playlistId ?>')">
+    <img src="assets/icons/trash.png" alt="" srcset="">
+    <span>Remove</span> 
+  </div>
+</nav>
