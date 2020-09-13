@@ -8,6 +8,23 @@ let currentIndex = 0;
 let repeat = false;
 let shuffle = false;
 
+$(document).on('change', 'select.playlist', function() {
+  const playlistId = $(this).val()
+  const songId = $(this).prevAll('.songId').val();
+
+  $.post('includes/handlers/ajax/addToPlaylist.php', { playlistId: playlistId, songId: songId })
+  .done((error) => {
+
+    if(error) {
+      alert(error);
+      return;
+    }
+
+    $('.optionsMenu').hide();
+    $(this).val('');
+  })
+})
+
 function playFirstSong() {
   setTrack(tempPlaylist[0], tempPlaylist, true);
 }
@@ -15,8 +32,11 @@ function playFirstSong() {
 function openOptionsMenu(button, event, i) {
   event.stopPropagation();
 
+  const songId = $(button).prevAll('.songId').val();
+
   const menu = $('.optionsMenu');
   const menuWidth = menu.width()
+  menu.find('.songId').val(songId)
 
   const scrollTop = $(window).scrollTop(); // Distance from top of window to top of document
   const elementOffset = $(button).offset().top; // Distance fom top of document

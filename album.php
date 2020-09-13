@@ -72,8 +72,8 @@ $artist = $album->getArtist();
 </div>
 
 <nav class="optionsMenu" onmouseover="$(this).show()" onmouseout="$(this).hide()">
-  <input type="hidden" class="songId">
   <div class="item">
+    <input type="hidden" class="songId">
     <img src="assets/icons/playlist.png" alt="" srcset="">
     <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
   </div>

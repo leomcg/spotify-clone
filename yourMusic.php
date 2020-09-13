@@ -77,8 +77,6 @@ include('includes/includedFiles.php');
   <div>
 </div>
 
-
-
 <div class="modal" onclick="$('.modal').hide()">
   <form action="#" class="prompt" onclick="event.stopPropagation();" onsubmit="createPlaylist();">
     <div class="close" onclick="$('.modal').hide()">&#10005;</div>
